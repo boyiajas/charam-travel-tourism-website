@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Montserrat", sans-serif;
+  --font-hero: "Bebas Neue", sans-serif;
+  
+  --color-maroon: #4c0d30;
+  --color-slate-grey: #6c7570;
+  --color-cream: #f6f4ef;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans bg-white text-neutral-900;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+}
+
+@keyframes weather-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.weather-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.weather-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: weather-marquee 26s linear infinite;
+}
+
+@keyframes hero-line-in {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+    letter-spacing: 0.18em;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-line {
+  opacity: 0;
+  animation: hero-line-in 0.9s ease-out forwards;
+  will-change: transform, opacity;
+}
+
+.hero-line-1 {
+  animation-delay: 0.08s;
+}
+
+.hero-line-2 {
+  animation-delay: 0.24s;
+}
+
+.hero-line-3 {
+  animation-delay: 0.4s;
+}
