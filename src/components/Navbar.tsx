@@ -14,9 +14,10 @@ export default function Navbar() {
     {
       name: "POPULAR Tours",
       items: [
-        { name: "Johannesburg", to: "/contact" },
-        { name: "Pretoria", to: "/contact" },
-        { name: "Northwest", to: "/contact" },
+        { name: "Johannesburg Highlights", to: "/tours/johannesburg-highlights" },
+        { name: "Soweto Heritage Tour", to: "/tours/soweto-heritage" },
+        { name: "Pretoria Landmarks", to: "/tours/pretoria-landmarks" },
+        { name: "North West Escapes", to: "/tours/north-west-escapes" },
       ],
     },
     { name: "Bookings", href: "https://wa.me/27827139660" },
@@ -76,7 +77,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 8 }}
                         transition={{ duration: 0.18 }}
-                        className="absolute left-0 top-full z-50 mt-4 min-w-[220px] border border-neutral-200 bg-white p-2 shadow-[0_18px_44px_rgba(17,17,17,0.12)]"
+                        className="absolute left-0 top-full z-50 mt-4 min-w-[260px] rounded-2xl border border-neutral-200 bg-white p-2 shadow-[0_18px_44px_rgba(17,17,17,0.12)]"
                       >
                         {link.items.map((item) => (
                           <Link

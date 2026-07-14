@@ -10,29 +10,25 @@ const heroSlides = [
     title: "Welcome",
     subtitle: "To",
     highlight: "Charam Travel",
-    description:
-      "Professional airport transfers, executive transport, and private travel support across Johannesburg and Gauteng.",
+    //description: "Professional airport transfers, executive transport, and private travel support across Johannesburg and Gauteng.",
   },
   {
-    image: "/highway.webp",
+    image: "/IMG-20260709-WA0040.jpg",
     alt: "Executive travel route",
     eyebrow: "Corporate Mobility",
     title: "Reliable",
     subtitle: "Travel For",
     highlight: "Business",
-    description:
-      "Dependable transfer coordination for meetings, airport pickups, hospitality guests, and time-sensitive business schedules.",
+    //description: "Dependable transfer coordination for meetings, airport pickups, hospitality guests, and time-sensitive business schedules.",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?auto=format&fit=crop&w=1600&q=80",
+    image: "/312090.jpg",
     alt: "Scenic South African route",
     eyebrow: "Private Tours",
     title: "Discover",
     subtitle: "More Of",
     highlight: "Gauteng",
-    description:
-      "Pre-booked guided routes for Johannesburg, Soweto, Pretoria, and selected North West destinations with experienced drivers.",
+    //description: "Pre-booked guided routes for Johannesburg, Soweto, Pretoria, and selected North West destinations with experienced drivers.",
   },
 ];
 
@@ -72,6 +68,7 @@ const tours = [
   {
     name: "Johannesburg Highlights",
     image: "/apartheid-museum.jpg",
+    to: "/tours/johannesburg-highlights",
     places: [
       "Hillbrow Tower",
       "Ponte Building",
@@ -83,6 +80,7 @@ const tours = [
   {
     name: "Soweto Heritage Tour",
     image: "/soweto.jpg",
+    to: "/tours/soweto-heritage",
     places: [
       "Welcome to Soweto sign",
       "Orlando Towers",
@@ -94,6 +92,7 @@ const tours = [
   {
     name: "Pretoria Landmarks",
     image: "/statue-of-nelson-mandela.jpg",
+    to: "/tours/pretoria-landmarks",
     places: [
       "Union Buildings",
       "Church Square",
@@ -105,6 +104,7 @@ const tours = [
   {
     name: "North West Escapes",
     image: "/sun-city-day-tour-large.jpg",
+    to: "/tours/north-west-escapes",
     places: [
       "Maropeng",
       "Rhino and Lion Park",
@@ -198,7 +198,7 @@ export default function Home() {
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-[1440px] px-6 md:px-10">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-            <div className="relative overflow-hidden border border-maroon/12 bg-[#f7f2f5] p-8 shadow-[0_18px_48px_rgba(76,13,48,0.08)] md:p-12">
+            <div className="relative overflow-hidden rounded-[2rem] border border-maroon/12 bg-[#f7f2f5] p-8 shadow-[0_18px_48px_rgba(76,13,48,0.08)] md:p-12">
               <div className="absolute right-0 top-0 h-28 w-28 rounded-full bg-maroon/8 blur-2xl" />
               <p className="font-display text-sm uppercase tracking-[0.24em] text-maroon">
                 About Charam Travel
@@ -250,7 +250,7 @@ export default function Home() {
             </div>
 
             <div className="space-y-6">
-              <article className="overflow-hidden border border-maroon/12 bg-white shadow-[0_18px_42px_rgba(76,13,48,0.12)]">
+              <article className="overflow-hidden rounded-[2rem] border border-maroon/12 bg-white shadow-[0_18px_42px_rgba(76,13,48,0.12)]">
                 <div className="relative aspect-[4/4.5] overflow-hidden">
                   <img
                     src="/IMG-20260620-WA0028.jpg"
@@ -269,7 +269,7 @@ export default function Home() {
                 </div>
               </article>
 
-              <article className="border border-neutral-200 bg-white p-8 shadow-[0_12px_32px_rgba(76,13,48,0.06)]">
+              <article className="rounded-[2rem] border border-neutral-200 bg-white p-8 shadow-[0_12px_32px_rgba(76,13,48,0.06)]">
                 <p className="font-display text-[0.72rem] uppercase tracking-[0.22em] text-neutral-500">
                   Operating Profile
                 </p>
@@ -285,7 +285,7 @@ export default function Home() {
                 </div>
               </article>
 
-              <article className="bg-maroon p-8 text-white shadow-[0_18px_38px_rgba(76,13,48,0.24)]">
+              <article className="rounded-[2rem] bg-maroon p-8 text-white shadow-[0_18px_38px_rgba(76,13,48,0.24)]">
                 <p className="font-display text-[0.72rem] uppercase tracking-[0.22em] text-white/70">
                   Our Mission
                 </p>
@@ -342,7 +342,7 @@ export default function Home() {
             {services.map((service) => (
               <article
                 key={service.title}
-                className="flex h-full flex-col border border-maroon/15 bg-white p-8 shadow-[0_12px_32px_rgba(76,13,48,0.06)]"
+                className="flex h-full flex-col rounded-[1.75rem] border border-maroon/15 bg-white p-8 shadow-[0_12px_32px_rgba(76,13,48,0.06)]"
               >
                 <div className="h-1 w-14 bg-maroon" />
                 <h3 className="mt-6 font-display text-2xl font-semibold uppercase text-neutral-900">
@@ -411,36 +411,47 @@ export default function Home() {
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
             {tours.map((tour) => (
-              <article
+              <Link
                 key={tour.name}
-                className="relative overflow-hidden border border-white/15 bg-white/8"
+                to={tour.to}
+                className="group relative flex flex-col justify-between overflow-hidden rounded-[1.75rem] border border-white/15 bg-white/8 transition-all duration-300 hover:border-white/40 hover:shadow-[0_24px_54px_rgba(0,0,0,0.45)]"
               >
                 <img
                   src={tour.image}
                   alt={tour.name}
-                  className="absolute inset-0 h-full w-full object-cover"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/78 via-black/48 to-black/20" />
-                <div className="relative z-10 p-8">
-                  <h3 className="font-display text-2xl font-semibold uppercase">
-                    {tour.name}
-                  </h3>
-                  <ul className="mt-5 space-y-3 pl-5 text-base leading-7 text-white/90 marker:text-white/75">
-                    {tour.places.map((place) => (
-                      <li key={place} className="list-disc">
-                        {place}
-                      </li>
-                    ))}
-                  </ul>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/55 to-black/25 transition-opacity group-hover:opacity-95" />
+                <div className="relative z-10 flex h-full flex-col justify-between p-8">
+                  <div>
+                    <h3 className="font-display text-2xl font-semibold uppercase transition-colors group-hover:text-[#f2b640]">
+                      {tour.name}
+                    </h3>
+                    <ul className="mt-5 space-y-3 pl-5 text-base leading-7 text-white/90 marker:text-white/75">
+                      {tour.places.map((place) => (
+                        <li key={place} className="list-disc">
+                          {place}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="mt-8 flex items-center justify-between border-t border-white/15 pt-6">
+                    <span className="font-display text-xs font-semibold uppercase tracking-[0.2em] text-white/80 transition-colors group-hover:text-white">
+                      Explore Full Itinerary & Highlights
+                    </span>
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/15 text-white transition-all group-hover:translate-x-1 group-hover:bg-[#f2b640] group-hover:text-neutral-900">
+                      →
+                    </span>
+                  </div>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
       {cookieVisible && (
-        <div className="fixed bottom-6 right-6 z-40 max-w-sm rounded-md bg-maroon p-6 text-white shadow-2xl shadow-black/20">
+        <div className="fixed bottom-6 right-6 z-40 max-w-sm rounded-[1.5rem] bg-maroon p-6 text-white shadow-2xl shadow-black/20">
           <p className="font-display text-2xl font-medium">This website uses cookies.</p>
           <p className="mt-4 text-base leading-7 text-white/90">
             We use cookies to analyze traffic and improve your website

@@ -22,7 +22,7 @@ export default function PrivacyPolicy() {
           <p className="text-slate-grey">Last updated: May 2026</p>
         </motion.div>
 
-        <div className="prose prose-neutral max-w-none space-y-10 text-slate-grey leading-relaxed">
+        <div className="prose prose-neutral max-w-none rounded-[2rem] border border-neutral-200 bg-[#fcfaf7] p-8 md:p-10 space-y-10 text-slate-grey leading-relaxed">
           <section>
             <h2 className="text-2xl font-serif text-neutral-900 mb-4">1. Data Collection</h2>
             <p>

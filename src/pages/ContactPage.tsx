@@ -53,7 +53,7 @@ export default function ContactPage() {
             {contactCards.map((item) => (
               <article
                 key={item.title}
-                className="border border-maroon/15 bg-white p-8 shadow-[0_12px_32px_rgba(76,13,48,0.06)]"
+                className="rounded-[1.75rem] border border-maroon/15 bg-white p-8 shadow-[0_12px_32px_rgba(76,13,48,0.06)]"
               >
                 <item.icon size={24} className="text-maroon" />
                 <h2 className="mt-5 text-2xl font-semibold uppercase tracking-[0.03em] text-neutral-900">
@@ -70,7 +70,7 @@ export default function ContactPage() {
 
       <section className="bg-white py-16 md:py-20">
         <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-8 px-6 md:px-10 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="border border-neutral-200 bg-white p-8 md:p-10">
+          <div className="rounded-[2rem] border border-neutral-200 bg-white p-8 md:p-10">
             <p className="font-display text-sm uppercase tracking-[0.24em] text-maroon">
               Send A Message
             </p>
@@ -90,7 +90,7 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="text"
-                    className="w-full border border-neutral-200 bg-white px-5 py-4 text-neutral-900 outline-none transition focus:border-maroon"
+                    className="w-full rounded-2xl border border-neutral-200 bg-white px-5 py-4 text-neutral-900 outline-none transition focus:border-maroon"
                     placeholder="John Doe"
                   />
                 </div>
@@ -100,7 +100,7 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="email"
-                    className="w-full border border-neutral-200 bg-white px-5 py-4 text-neutral-900 outline-none transition focus:border-maroon"
+                    className="w-full rounded-2xl border border-neutral-200 bg-white px-5 py-4 text-neutral-900 outline-none transition focus:border-maroon"
                     placeholder="j.doe@company.com"
                   />
                 </div>
@@ -110,7 +110,7 @@ export default function ContactPage() {
                 <label className="text-[10px] font-display uppercase tracking-[0.18em] text-neutral-500">
                   Service Type
                 </label>
-                <select className="w-full appearance-none border border-neutral-200 bg-white px-5 py-4 text-neutral-900 outline-none transition focus:border-maroon">
+                <select className="w-full appearance-none rounded-2xl border border-neutral-200 bg-white px-5 py-4 text-neutral-900 outline-none transition focus:border-maroon">
                   <option>Airport Transfer</option>
                   <option>Executive Transfer</option>
                   <option>Private Tour</option>
@@ -124,12 +124,12 @@ export default function ContactPage() {
                 </label>
                 <textarea
                   rows={6}
-                  className="w-full resize-none border border-neutral-200 bg-white px-5 py-4 text-neutral-900 outline-none transition focus:border-maroon"
+                  className="w-full resize-none rounded-2xl border border-neutral-200 bg-white px-5 py-4 text-neutral-900 outline-none transition focus:border-maroon"
                   placeholder="Pickup date, time, route, passenger count, luggage, or any special requests."
                 />
               </div>
 
-              <button className="inline-flex w-full items-center justify-center gap-3 bg-maroon px-6 py-4 text-sm font-display uppercase tracking-[0.18em] text-white transition hover:bg-maroon/90">
+              <button className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-maroon px-6 py-4 text-sm font-display uppercase tracking-[0.18em] text-white transition hover:bg-maroon/90">
                 Submit Inquiry
                 <Send size={16} />
               </button>
@@ -137,7 +137,7 @@ export default function ContactPage() {
           </div>
 
           <div className="flex flex-col gap-8">
-            <div className="border border-neutral-200 bg-[#f7f2f5] p-8 md:p-10">
+            <div className="rounded-[2rem] border border-neutral-200 bg-[#f7f2f5] p-8 md:p-10">
               <p className="font-display text-sm uppercase tracking-[0.24em] text-maroon">
                 Office and Support
               </p>
@@ -169,7 +169,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="relative min-h-[420px] overflow-hidden border border-neutral-200 bg-white">
+            <div className="relative min-h-[420px] overflow-hidden rounded-[2rem] border border-neutral-200 bg-white">
               {!hasValidKey ? (
                 <div className="flex h-full w-full flex-col items-center justify-center bg-neutral-50 p-10 text-center">
                   <MapPin size={48} className="mb-5 text-maroon/35" />
@@ -180,7 +180,7 @@ export default function ContactPage() {
                     Add your `GOOGLE_MAPS_PLATFORM_KEY` to show the interactive
                     office location here.
                   </p>
-                  <div className="mt-6 border border-neutral-200 bg-white px-4 py-3 text-[0.72rem] font-display uppercase tracking-[0.18em] text-neutral-700">
+                  <div className="mt-6 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-[0.72rem] font-display uppercase tracking-[0.18em] text-neutral-700">
                     35 Fricker Road, Illovo, Johannesburg
                   </div>
                 </div>
